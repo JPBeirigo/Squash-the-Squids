@@ -1,5 +1,7 @@
 extends CharacterBody3D
 
+# Emitido quando é esmagado pelo jogador
+signal squashed
 # Minimum speed of the mob in meters per second.
 @export var min_speed = 10
 # Maximum speed of the mob in meters per second.
@@ -26,5 +28,8 @@ func initialize(start_position, player_position):
 	# in order to move in the direction the mob is looking.
 	velocity = velocity.rotated(Vector3.UP, rotation.y)
 
+func squash():
+	squashed.emit()
+	queue_free()
 func _on_visible_on_screen_enabler_3d_screen_exited() -> void:
 	queue_free()

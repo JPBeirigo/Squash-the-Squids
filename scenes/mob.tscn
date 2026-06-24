@@ -6,7 +6,7 @@
 [sub_resource type="BoxShape3D" id="BoxShape3D_2m5a4"]
 size = Vector3(1.5629883, 0.99664307, 1.840332)
 
-[node name="Mob" type="CharacterBody3D" unique_id=608270932]
+[node name="Mob" type="CharacterBody3D" unique_id=608270932 groups=["mob"]]
 script = ExtResource("1_bsing")
 max_speed = 25
 
